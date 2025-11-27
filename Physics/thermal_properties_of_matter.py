@@ -1,10 +1,11 @@
 def temperature_conversion1(f):
-    return (f-32)/9
+   return (f - 32) * 5.0 / 9.0
 
 def temperature_conversion2(k):
-    return k - (273.15)/5
+    return k - 273.15
+
 def temperature_conversion3(R):
-    return R / 4
+     return (R - 491.67) * 5.0 / 9.0
 
 def thermal_volume_expansion(V0,gamma,dk):
     return V0*(1+(gamma*dk))

@@ -1,5 +1,14 @@
-import Physics.dimensional_formulas
-from Physics.physics_constants import c, N_A, e, g
+import os
+import sys
+
+try:
+    import Physics.dimensional_formulas
+    from Physics.physics_constants import c, N_A, e, g
+except ModuleNotFoundError:
+    # If running the file directly (not as a package), make project root importable
+    sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+    import Physics.dimensional_formulas
+    from Physics.physics_constants import c, N_A, e, g
 
 # ---------------------------- Basic Quantities ----------------------------
 def proc_area():
@@ -466,6 +475,18 @@ def proc_temperature_conversion():
     from Physics.thermal_properties_of_matter import temperature_conversion1
     f = float(input("Enter temperature in Fahrenheit (°F): "))
     result = temperature_conversion1(f)
+    print(f"Temperature in Celsius = {result:.5g} °C")
+
+def proc_temperature_from_kelvin():
+    from Physics.thermal_properties_of_matter import temperature_conversion2
+    k = float(input("Enter temperature in Kelvin (K): "))
+    result = temperature_conversion2(k)
+    print(f"Temperature in Celsius = {result:.5g} °C")
+
+def proc_temperature_from_rankine():
+    from Physics.thermal_properties_of_matter import temperature_conversion3
+    R = float(input("Enter temperature in Rankine (°R): "))
+    result = temperature_conversion3(R)
     print(f"Temperature in Celsius = {result:.5g} °C")
 
 def proc_thermal_linear_expansion():
