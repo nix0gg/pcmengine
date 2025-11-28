@@ -34,7 +34,7 @@ b = 2.897771955e-3  # m·K
 b_entropy = 3.00292e-3  # m·K
 
 #Elementary charge
-e = 1.602176634e-19  # C
+ec = 1.602176634e-19  # C
 
 #Conductance quantum
 G0 = 7.748091729e-5  # S
