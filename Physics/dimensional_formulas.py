@@ -1,5 +1,5 @@
 import math
-from physics_constants import c, N_A, e
+from physics_constants import c, N_A, eV, ec
 
 # ---------------------------- Basic Quantities ----------------------------
 
@@ -312,7 +312,7 @@ def refractive_index(speed_in_medium):
     return c / speed_in_medium
 
 def faraday_constant():
-    return N_A * e
+    return N_A * ec
 
 def wavenumber(wavelength):
     return (2 * math.pi) / wavelength

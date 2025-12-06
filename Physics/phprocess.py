@@ -1,155 +1,178 @@
 import os
 import sys
 
-try:
-    import physics.dimensional_formulas
-    from physics.physics_constants import g
-except ModuleNotFoundError:
-    # If running the file directly (not as a package), make project root importable
-    sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-    import physics.dimensional_formulas
-    from physics.physics_constants import g
+ # If running the file directly (not as a package), make project root importable
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+from physics.physics_constants import g
+   
 
 # ---------------------------- Basic Quantities ----------------------------
 def proc_area():
+    from physics.dimensional_formulas import area
     length = float(input("Enter length (L): "))
     breadth = float(input("Enter breadth (L): "))
-    print("Area (L^2):", physics.dimensional_formulas.area(length, breadth))
+    print("Area (L^2):", area(length, breadth))
 
 def proc_volume():
+    from physics.dimensional_formulas import volume
     length = float(input("Enter length (L): "))
     breadth = float(input("Enter breadth (L): "))
     height = float(input("Enter height (L): "))
-    print("Volume (L^3):", physics.dimensional_formulas.volume(length, breadth, height))
+    print("Volume (L^3):", volume(length, breadth, height))
 
 def proc_mass_density():
+    from physics.dimensional_formulas import mass_density
     mass = float(input("Enter mass (M): "))
     volume = float(input("Enter volume (L^3): "))
-    print("Mass Density (M/L^3):", physics.dimensional_formulas.mass_density(mass, volume))
+    print("Mass Density (M/L^3):", mass_density(mass, volume))
 
 def proc_frequency():
+    from physics.dimensional_formulas import frequency
     time_period = float(input("Enter time period (T): "))
-    print("Frequency (1/T):", physics.dimensional_formulas.frequency(time_period))
+    print("Frequency (1/T):", frequency(time_period))
 
 def proc_speed():
+    from physics.dimensional_formulas import speed
     distance = float(input("Enter distance (L): "))
     time = float(input("Enter time (T): "))
-    print("Speed (L/T):", physics.dimensional_formulas.speed(distance, time))
+    print("Speed (L/T):", speed(distance, time))
 
 def proc_acceleration():
+    from physics.dimensional_formulas import acceleration
     change_in_velocity = float(input("Enter change in velocity (L/T): "))
     time = float(input("Enter time (T): "))
-    print("Acceleration (L/T^2):", physics.dimensional_formulas.acceleration(change_in_velocity, time))
+    print("Acceleration (L/T^2):", acceleration(change_in_velocity, time))
 
 # ---------------------------- Mechanics ----------------------------
 def proc_force():
+    from physics.dimensional_formulas import force
     mass = float(input("Enter mass (M): "))
     acceleration = float(input("Enter acceleration (L/T^2): "))
-    print("Force (MLT^-2):", physics.dimensional_formulas.force(mass, acceleration))
+    print("Force (MLT^-2):", force(mass, acceleration))
 
 def proc_impulse():
+    from physics.dimensional_formulas import impulse
     force = float(input("Enter force (MLT^-2): "))
     time = float(input("Enter time (T): "))
-    print("Impulse (MLT^-1):", physics.dimensional_formulas.impulse(force, time))
+    print("Impulse (MLT^-1):", impulse(force, time))
 
 def proc_work():
+    from physics.dimensional_formulas import work
     force = float(input("Enter force (MLT^-2): "))
     distance = float(input("Enter distance (L): "))
-    print("Work (ML^2T^-2):", physics.dimensional_formulas.work(force, distance))
+    print("Work (ML^2T^-2):", work(force, distance))
 
 def proc_power():
+    from physics.dimensional_formulas import power
     work = float(input("Enter work done (ML^2T^-2): "))
     time = float(input("Enter time taken (T): "))
-    print("Power (ML^2T^-3):", physics.dimensional_formulas.power(work, time))
+    print("Power (ML^2T^-3):", power(work, time))
 
 def proc_momentum():
+    from physics.dimensional_formulas import momentum
     mass = float(input("Enter mass (M): "))
     velocity = float(input("Enter velocity (L/T): "))
-    print("Momentum (MLT^-1):", physics.dimensional_formulas.momentum(mass, velocity))
+    print("Momentum (MLT^-1):", momentum(mass, velocity))
 
 def proc_pressure():
+    from physics.dimensional_formulas import pressure
     force = float(input("Enter force (MLT^-2): "))
     area = float(input("Enter area (L^2): "))
-    print("Pressure (ML^-1T^-2):", physics.dimensional_formulas.pressure(force, area))
+    print("Pressure (ML^-1T^-2):", pressure(force, area))
 
 def proc_strain():
+    from physics.dimensional_formulas import strain
     change = float(input("Enter change in dimension (L): "))
     original = float(input("Enter original dimension (L): "))
-    print("Strain (dimensionless):", physics.dimensional_formulas.strain(change, original))
+    print("Strain (dimensionless):", strain(change, original))
 
 def proc_modulus_of_elasticity():
+    from physics.dimensional_formulas import modulus_of_elasticity
     stress = float(input("Enter stress (ML^-1T^-2): "))
     strain = float(input("Enter strain (dimensionless): "))
-    print("Modulus of Elasticity (ML^-1T^-2):", physics.dimensional_formulas.modulus_of_elasticity(stress, strain))
+    print("Modulus of Elasticity (ML^-1T^-2):", modulus_of_elasticity(stress, strain))
 
 def proc_surface_tension():
+    from physics.dimensional_formulas import surface_tension
     force = float(input("Enter force (MLT^-2): "))
     length = float(input("Enter length (L): "))
-    print("Surface Tension (MT^-2):", physics.dimensional_formulas.surface_tension(force, length))
+    print("Surface Tension (MT^-2):", surface_tension(force, length))
 
 def proc_kinetic_energy():
+    from physics.dimensional_formulas import kinetic_energy
     mass = float(input("Enter mass (M): "))
     velocity = float(input("Enter velocity (L/T): "))
-    print("Kinetic Energy (ML^2T^-2):", physics.dimensional_formulas.kinetic_energy(mass, velocity))
+    print("Kinetic Energy (ML^2T^-2):", kinetic_energy(mass, velocity))
 
 def proc_potential_energy():
+    from physics.dimensional_formulas import potential_energy
     mass = float(input("Enter mass (M): "))
     height = float(input("Enter height (L): "))
-    print("Potential Energy (ML^2T^-2):", physics.dimensional_formulas.potential_energy(mass, height, g))
+    print("Potential Energy (ML^2T^-2):", potential_energy(mass, height, g))
 
 def proc_escape_velocity():
+    from physics.dimensional_formulas import escape_velocity
     mass = float(input("Enter mass of body (M): "))
     radius = float(input("Enter radius (L): "))
     G = float(input("Enter gravitational constant (L^3M^-1T^-2): "))
-    print("Escape Velocity (L/T):", physics.dimensional_formulas.escape_velocity(mass, radius, G))
+    print("Escape Velocity (L/T):", escape_velocity(mass, radius, G))
 
 # ---------------------------- Electricity ----------------------------
 def proc_charge_dimensional_formula():
+    from physics.dimensional_formulas import charge
     current = float(input("Enter current (A): "))
     time = float(input("Enter time (T): "))
-    print("Charge (AT):", physics.dimensional_formulas.charge(current, time))
+    print("Charge (AT):", charge(current, time))
 
 def proc_current_density():
+    from physics.dimensional_formulas import current_density
     current = float(input("Enter current (A): "))
     area = float(input("Enter area (L^2): "))
-    print("Current Density (AL^-2):", physics.dimensional_formulas.current_density(current, area))
+    print("Current Density (AL^-2):", current_density(current, area))
 
 def proc_voltage():
+    from physics.dimensional_formulas import voltage
     work = float(input("Enter work done (ML^2T^-2): "))
     charge = float(input("Enter charge (AT): "))
-    print("Voltage (ML^2T^-3A^-1):", physics.dimensional_formulas.voltage(work, charge))
+    print("Voltage (ML^2T^-3A^-1):", voltage(work, charge))
 
 def proc_resistance():
+    from physics.dimensional_formulas import resistance
     voltage = float(input("Enter voltage (ML^2T^-3A^-1): "))
     current = float(input("Enter current (A): "))
-    print("Resistance (ML^2T^-3A^-2):", physics.dimensional_formulas.resistance(voltage, current))
+    print("Resistance (ML^2T^-3A^-2):", resistance(voltage, current))
 
 # ---------------------------- Optics and Radiation ----------------------------
 def proc_refractive_index():
+    from physics.dimensional_formulas import refractive_index
     speed_in_medium = float(input("Enter speed in medium (L/T): "))
-    print("Refractive Index (dimensionless):", physics.dimensional_formulas.refractive_index(speed_in_medium))
+    print("Refractive Index (dimensionless):", refractive_index(speed_in_medium))
 
 def proc_wavenumber():
+    from physics.dimensional_formulas import wavenumber
     wavelength = float(input("Enter wavelength (L): "))
-    print("Wavenumber (L^-1):", physics.dimensional_formulas.wavenumber(wavelength))
+    print("Wavenumber (L^-1):", wavenumber(wavelength))
 
 # ---------------------------- Heat and Thermodynamics ----------------------------
 def proc_heat_capacity():
+    from physics.dimensional_formulas import heat_capacity
     heat_energy = float(input("Enter heat energy (ML^2T^-2): "))
     temp_change = float(input("Enter temperature change (K): "))
-    print("Heat Capacity (ML^2T^-2K^-1):", physics.dimensional_formulas.heat_capacity(heat_energy, temp_change))
+    print("Heat Capacity (ML^2T^-2K^-1):", heat_capacity(heat_energy, temp_change))
 
 def proc_specific_heat_capacity():
+    from physics.dimensional_formulas import specific_heat_capacity
     heat_energy = float(input("Enter heat energy (ML^2T^-2): "))
     mass = float(input("Enter mass (M): "))
     temp_change = float(input("Enter temperature change (K): "))
     print("Specific Heat Capacity (L^2T^-2K^-1):", 
-          physics.dimensional_formulas.specific_heat_capacity(heat_energy, mass, temp_change))
+          specific_heat_capacity(heat_energy, mass, temp_change))
 
 def proc_latent_heat():
+    from physics.dimensional_formulas import latent_heat
     heat_energy = float(input("Enter heat energy (ML^2T^-2): "))
     mass = float(input("Enter mass (M): "))
-    print("Latent Heat (L^2T^-2):", physics.dimensional_formulas.latent_heat(heat_energy, mass))
+    print("Latent Heat (L^2T^-2):", latent_heat(heat_energy, mass))
 
 # ---------------------------- Motion in One Dimension ----------------------------
 
