@@ -1,17 +1,18 @@
 # Physics/__init__.py
 
-from .conversion_factors import *
-from .dimensional_formulas import *
-from .gravitation import *
-from .laws_of_motion import *
-from .mechanical_properties_solids import *
-from .motion_in_one_dimension import *
-from .motion_in_plane import *
-from .physics_constants import *
-from .system_of_particles import *
-from .work_power_energy import *
-from .thermal_properties_of_matter import *
-from .mechanical_properties_fluids import *
+from . import conversion_factors
+from . import dimensional_formulas
+from . import gravitation
+from . import laws_of_motion
+from . import mechanical_properties_solids
+from . import motion_in_one_dimension
+from . import motion_in_plane
+from . import physics_constants
+from . import system_of_particles
+from . import work_power_energy
+from . import thermal_properties_of_matter
+from . import mechanical_properties_fluids
+
 __all__ = [
     # Core physics areas
     *conversion_factors.__all__,

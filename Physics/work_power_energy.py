@@ -16,12 +16,12 @@ def total_mechanical_energy(ke,pe):
 def power(w,t):
     return w/t
 
-def power_2(f,v):
+def power_2(f,v,theta):
     return f*v*math.cos(theta)
 
-def work_energy_theorem(k2,k1,e):
+def work_energy_theorem(k2,k1):
     delta_k = k2-k1
-    return (k2-k1)
+    return (delta_k)
 
 def work_2(f,d):
     return f*d
