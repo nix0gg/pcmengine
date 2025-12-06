@@ -20,7 +20,7 @@ def shearing_strain(dx,L):
 def longitudinal_strain(dL, L):
     return dL / L
 
-def volumetric_strain(dV, V):
+def volumetric_strain(dV, V): 
     return dV / V
 
 #Young's Modulus
@@ -58,7 +58,7 @@ def poissonratio2(dr,r,dl,l):
     return -(dr / r) / (dl / l)
 
 def elastic_potential_energy1(F,dL):
-    return (F/2)* dL 
+    return (F/2)* dL
 
 def elastic_potential_energy2(F,A,dL,L):
     return 0.5 * (F/A) * (dL/L) * (A*L)
