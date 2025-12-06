@@ -1,7 +1,7 @@
 import math
 
 #Stress
-def longitudinal_stress(F, A):
+def longitudinal_stress(F, A): 
     return F / A
 
 def hooke_law_stress(E, strain):
