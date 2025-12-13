@@ -352,25 +352,33 @@ def proc_hooke_law_stress():
     from physics.mechanical_properties_solids import hooke_law_stress
     E = float(input("Enter value of 'E':"))
     strain = float(input("Enter value of strain:"))
-    return hooke_law_stress(E,strain)
+    result = hooke_law_stress(E,strain)
+    print(f"Hooke's Law Stress = {result:.5g} Pa")
+    return result
 
 def proc_shearing_stress1():
     from physics.mechanical_properties_solids import shearing_stress1
     F= float(input("Enter force:"))
     A = float(input("Enter area:"))
-    return shearing_stress1(F,A) 
+    result = shearing_stress1(F,A)
+    print(f"Shearing Stress = {result:.5g} Pa")
+    return result 
 
 def proc_shearing_stress2():
     from physics.mechanical_properties_solids import shearing_stress2
     eta = float(input("Enter eta:"))
     theta = float(input("Enter theta:"))
-    return shearing_stress2(eta,theta)
+    result = shearing_stress2(eta,theta)
+    print(f"Shearing Stress = {result:.5g} Pa")
+    return result
 
 def proc_shearing_strain():
     from physics.mechanical_properties_solids import shearing_strain
     dx = float(input("Enter dx:"))
     L = float(input("Enter l:"))
-    return shearing_strain(dx,L)
+    result = shearing_strain(dx,L)
+    print(f"Shearing Strain = {result:.5g}")
+    return result
 
 def proc_strain_longitudinal():
     from physics.mechanical_properties_solids import longitudinal_strain
@@ -409,7 +417,9 @@ def proc_poisson_ratio2():
     r = float(input("Enter value for r:"))
     dl = float(input("Enter value for dl:"))
     l = float(input("Enter value for l:"))
-    return poissonratio2(dr,r,dl,l)
+    result = poissonratio2(dr,r,dl,l)
+    print(f"Poisson's Ratio = {result:.5g}")
+    return result
 
 def proc_elastic_potential_energy2():
     from physics.mechanical_properties_solids import elastic_potential_energy2
@@ -424,19 +434,25 @@ def proc_elastic_potential_energy1():
     from physics.mechanical_properties_solids import elastic_potential_energy1
     F = float(input("Enter value for 'F':"))
     dL = float(input("Enter value for dL:"))
-    return elastic_potential_energy1(F,dL)
+    result = elastic_potential_energy1(F,dL)
+    print(f"Elastic Potential Energy = {result:.5g} J")
+    return result
 
 def proc_volumetric_strain():
         from physics.mechanical_properties_solids import volumetric_strain
         dV = float(input("Enter value of dV:"))
         V = float(input("Enter value for V:"))
-        return volumetric_strain(dV,V)
+        result = volumetric_strain(dV,V)
+        print(f"Volumetric Strain = {result:.5g}")
+        return result
 
 def proc_young_modulus():
     from physics.mechanical_properties_solids import youngs_modulus
     stress = float(input("Enter value for stress:"))
     strain = float(input("Enter value for strain:"))
-    return youngs_modulus(stress,strain)
+    result = youngs_modulus(stress,strain)
+    print(f"Young's Modulus = {result:.5g} Pa")
+    return result
 
 def proc_elongation():
     from physics.mechanical_properties_solids import elongation
@@ -444,7 +460,9 @@ def proc_elongation():
     L = float(input("Enter value for l:"))
     stress = float(input("Enter value for stress:"))
     strain= float(input("Enter value for strain:"))
-    return elongation(longitudinal_strain,L,stress,strain)
+    result = elongation(longitudinal_strain,L,stress,strain)
+    print(f"Elongation = {result:.5g} m")
+    return result
 
 def proc_shear_modulus2():
     from physics.mechanical_properties_solids import shear_modulus2
@@ -452,14 +470,18 @@ def proc_shear_modulus2():
     l = float(input("Enter value for 'l':"))
     a = float(input("Enter value for 'a':"))
     dx = float(input("Enter value for 'dx':"))
-    return shear_modulus2(f,l,a,dx)
+    result = shear_modulus2(f,l,a,dx)
+    print(f"Shear Modulus = {result:.5g} Pa")
+    return result
 
 def proc_shear_modulus3():
     from physics.mechanical_properties_solids import shear_modulus3
     F = float(input("Enter value of 'F':"))
     A = float(input("Enter value for 'A':"))
     theta = float(input("Enter value for theta:"))
-    return shear_modulus3(F,A,theta)
+    result = shear_modulus3(F,A,theta)
+    print(f"Shear Modulus = {result:.5g} Pa")
+    return result
 
 def proc_modulus_elasticity1():
     from physics.mechanical_properties_solids import bulk_modulus_elasticity1
@@ -467,50 +489,66 @@ def proc_modulus_elasticity1():
     A = float(input("Enter value for 'A'"))
     dV = float(input("Enter value for 'dV':"))
     V = float(input("Enter value for 'V':"))
-    return bulk_modulus_elasticity1(F,A,dV,V)
+    result = bulk_modulus_elasticity1(F,A,dV,V)
+    print(f"Bulk Modulus = {result:.5g} Pa")
+    return result
 
 def proc_compressibility1():
     from physics.mechanical_properties_solids import compressibility1
     B  = float(input("Enter value for 'B':"))
-    return compressibility1(B)
+    result = compressibility1(B)
+    print(f"Compressibility = {result:.5g} Pa^-1")
+    return result
 
 def proc_compressibility2():
     from physics.mechanical_properties_solids import compressibility2
     dV = float(input("Enter the value of 'dV':"))
     V = float(input("Enter the value of 'V':"))
     P = float(input("Enter value for 'P':"))
-    return compressibility2(dV,V,P)
+    result = compressibility2(dV,V,P)
+    print(f"Compressibility = {result:.5g} Pa^-1")
+    return result
 
 def proc_y1():
     from physics.mechanical_properties_solids import y1
     B = float(input("Enter the value of 'B':"))
     sigma = float(input("Enter the value of sigma:"))
-    return y1(B,sigma)
+    result = y1(B,sigma)
+    print(f"Y1 = {result:.5g}")
+    return result
 
 def proc_y2():
     from physics.mechanical_properties_solids import y2
     eta = float(input("Enter the value of eta:"))
     sigma = float(input("Enter the value of sigma:"))
-    return y2(eta,sigma)
+    result = y2(eta,sigma)
+    print(f"Y2 = {result:.5g}")
+    return result
 
 def proc_y3():
     from physics.mechanical_properties_solids import y3
     sigma = float(input("Enter the value for sigma:"))
     b = float(input("Enter the value for 'b':"))
     eta = float(input("Enter the value for eta:"))
-    return y3(sigma,b,eta)
+    result = y3(sigma,b,eta)
+    print(f"Y3 = {result:.5g}")
+    return result
 
 def proc_y9():
     from physics.mechanical_properties_solids import y9
     B = float(input("Enter the value of 'B':"))
     eta = float(input("Enter the value of eta:"))
-    return y9(B,eta)
+    result = y9(B,eta)
+    print(f"Y9 = {result:.5g}")
+    return result
 
 def proc_bulk_modulus():
     from physics.mechanical_properties_solids import bulk_modulus
     stress = float(input("Enter the value for stress:"))
     strain = float(input("Enter the value for strain:"))
-    return bulk_modulus(stress,strain)
+    result = bulk_modulus(stress,strain)
+    print(f"Bulk Modulus = {result:.5g} Pa")
+    return result
 
 def proc_bulk_modulus2():
     from physics.mechanical_properties_solids import bulk_modulus2
@@ -518,7 +556,9 @@ def proc_bulk_modulus2():
     a = float(input("Enter the value for 'a':"))
     dv = float(input("Enter the value for 'dv':"))
     v = float(input("Enter the value for 'v':"))
-    return bulk_modulus2(f,a,dv,v)
+    result = bulk_modulus2(f,a,dv,v)
+    print(f"Bulk Modulus = {result:.5g} Pa")
+    return result
 
 def proc_depression():
     from physics.mechanical_properties_solids import depression
@@ -527,7 +567,9 @@ def proc_depression():
     Y = float(input("Enter the value for 'Y':"))
     b = float(input("Enter the value for 'b':"))
     d = float(input("Enter the value for 'd':"))
-    return depression(W,L,Y,b,d)
+    result = depression(W,L,Y,b,d)
+    print(f"Depression = {result:.5g} m")
+    return result
 
 # ---------------------------- Gravitation ----------------------------
 def proc_gravitational_force():
