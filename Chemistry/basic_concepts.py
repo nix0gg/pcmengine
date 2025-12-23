@@ -1,4 +1,4 @@
-from Physics.physics_constants import N_A
+from physics.physics_constants import N_A
 # I don't know at this point lmfao
 def concentration(amt_solute, vol_solution):
     return (amt_solute / vol_solution)
