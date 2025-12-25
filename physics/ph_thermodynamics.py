@@ -1,4 +1,5 @@
 from physics_constants import N_A, R_inf
+import math
 #First Law of Thermodynamics
 def firstlaw1(dU,dW):
     dQ = dU + dW
@@ -99,19 +100,161 @@ def internalenergy_dQ(n,Cp,dT):
     dQ = n*Cp*dT
     return dQ
 
+def dU_cyclic_process(Uf,Ui):
+    dU = Uf - Ui 
+    return dU
+
+#Equation of states (Same formula, just slightly modified):
+#P1*V1 = P2*V2
+
+#P1 = P2V2/V1
+def eqn_of_state1(p2,v2,v1):
+    p1 = (p2*v2) / v1
+    return p1
+
+def eqn_of_state2(p1,v1,v2):
+    p2 = (p1*v1)/v2
+    return p2
+
+def eqn_of_state3(p2,v2,p1):
+    v1 = (p2*v2) / p1
+    return v1
+
+def eqn_of_state4(p1,v1,p2):
+    v2 = (p1*v1) / p2
+    return v2
+
+#Specific heat
+def specific_heat(Q,m,dT):
+    C = Q /(m*dT)
+    return C
+
+#Work done (isothermal process)
+def work_isothermal1(mew,T,Pi,Pf):
+    W1 = mew*R_inf*math.log10(Pi/Pf)
+    return W1
+
+def work_isothermal2(mew,T,Vf,Vi):
+    W2 = mew*R_inf*T*math.log10(Vf/Vi)
+    return W2
+
+def eqn_of_state_adiabatic1(Cp,Cv):
+    gamma = Cp / Cv
+    return gamma
+
+def eqn_of_state_adiabatic2(gamma,Cp):
+    Cv = Cp / gamma
+    return Cv
+
+def eqn_of_state_adiabatic3(Cv,gamma):
+    Cp = gamma*Cv
+    return Cp
+
+def work_done_adiabatic1(Pi,Vi,Pf,Vf,gamma):
+    W3 = (Pi*Vi-Pf*Vf)/(gamma-1)
+    return W3
+
+def work_done_adiabatic2(mew,Ti,Tf,gamma):
+    W4 = (mew*R_inf*(Ti-Tf))/(gamma-1)
+    return W4
+
+#P*V**gamma = K
+def work_adiabatic1(K,V,gamma):
+    P = K / (V**gamma)
+    return P
 
 
+def work_adiabatic2(K,P):
+    v_gamma = K / P
+    return v_gamma
 
+#Pf*Vf = mew*R*T
+def work_adiabatic3(mew,T,Vf):
+    Pf = (mew*R_inf*T) / Vf
+    return Pf
 
+def work_adiabatic4(Pf,mew,T):
+    Vf = (mew*R_inf*T)/Pf
+    return Vf
 
+def work_adiabatic5(Pf,Vf,T):
+    mew = (Pf*Vf) / (R_inf *T)
+    return mew
 
+#Pi*Vi = mew*R*T
+def work_adiabatic6(mew,T,Vi):
+    Pi = (mew*R_inf*T) / Vi
+    return Pi
 
+def work_adiabatic7(Pi,mew,T):
+    Vi = (mew*R_inf*T)/Pi
+    return Vi
 
+def work_adiabatic8(Pi,Vi,T):
+    mew = (Pi*Vi) / (R_inf *T)
+    return mew
 
+def work_done_isochoric1(P,Vi,Vf):
+    W = P*(Vf-Vi)
+    return W
 
+def work_done_isochoric2(mew,Tf,Ti):
+    W = mew*R_inf*(Tf-Ti)
+    return W
 
+def work_done_isochoric3(mew,dT):
+    W = mew*R_inf*dT
+    return W
 
+def work_done_isochoric4(mew,dT):
+    W = mew*R_inf*dT
+    return W
 
+#Carnot's Engine
+#Isothermal Expansion
+def isothermal_expansion(T1,V2,V1):
+    Q1 = R_inf*T1*math.log(V2/V1)
+    return Q1
+#
+def adiabtatic_expansion1(T1,T2,gamma):
+    W = ((R_inf*T2)-(R_inf*T1)) / (1-gamma)
+    return W
+
+def adiabatic_expansion2(T1,T2,gamma):
+    W = (R_inf*(T1-T2))/(gamma-1)
+    return W 
+
+#Isothermal compression
+def isothermal_compression1(T2,V4,V3):
+    W = -(R_inf)*T2*math.log(V4/V3)
+    return W
+
+def isothermal_compression2(T2,V3,V4):
+    W = R_inf*T2*math.log(V3/V4)
+    return W
+
+#Adiabatic compression
+
+def adiabatic_compression(T1,T2,gamma):
+    W = R_inf(T1-T2)/(gamma-1)
+    return W
+
+#Efficiency of carnot engine
+def eta_carnot_engine1(W,Q1):
+    eta = W/Q1
+    return eta
+
+def eta_carnot_engine2(Q2,Q1):
+    eta = 1-(Q2/Q1)
+    return eta
+
+def eta_carnot_engine3(T2,T1,V1,V2,V3,V4):
+    eta = (R_inf*T2*math.log(V3/V4)) /(R_inf*T1*math.log(V2/V1))
+    return eta
+
+def eta_carnot_engine4(T2,T1):
+    eta = 1-(T2/T1)
+    return eta
 
 
 

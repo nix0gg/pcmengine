@@ -1,5 +1,5 @@
 import math
-from Physics.physics_constants import c, e
+from physics.physics_constants import c
 
 e_me_ratio = 1.758820*10^11
 
