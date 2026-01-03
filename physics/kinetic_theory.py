@@ -69,10 +69,10 @@ def internal_energy_diatomic3(P,V):
 
 #specific heat capacity
 def cv():
-    Cv = 3/2*R_inf
+    Cv = 5/2*R_inf
     return Cv
 
 def cp():
-    Cp = 5/2*R_inf
+    Cp = 7/2*R_inf
     return Cp
 
