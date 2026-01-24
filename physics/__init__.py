@@ -12,7 +12,10 @@ from . import system_of_particles
 from . import work_power_energy
 from . import thermal_properties_of_matter
 from . import mechanical_properties_fluids
-
+from . import kinetic_theory
+from . import oscillations
+from . import ph_thermodynamics
+from . import waves
 __all__ = [
     # Core physics areas
     *conversion_factors.__all__,
@@ -27,4 +30,8 @@ __all__ = [
     *work_power_energy.__all__,
     *thermal_properties_of_matter.__all__,
     *mechanical_properties_fluids.__all__,
+    *kinetic_theory.__all__,
+    *oscillations.__all__,
+    *ph_thermodynamics.__all__,
+    *waves.__all__
 ]
