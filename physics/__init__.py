@@ -1,5 +1,3 @@
-# Physics/__init__.py
-
 from . import conversion_factors
 from . import dimensional_formulas
 from . import gravitation
@@ -17,7 +15,7 @@ from . import oscillations
 from . import ph_thermodynamics
 from . import waves
 __all__ = [
-    # Core physics areas
+   
     *conversion_factors.__all__,
     *dimensional_formulas.__all__,
     *gravitation.__all__,
