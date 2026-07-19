@@ -101,3 +101,38 @@ def cos_half(a):
 
 def tan_half(a):
     return math.sqrt((1-cos_d(a))/2)
+
+def sinxcos(a,b):
+    return 0.5*(sin_sum(a,b)+sin_diff(a,b))
+
+def cosxcos(a,b):
+    return 0.5*(cos_diff(a,b)+cos_sum(a,b))
+
+def sinxsin(a,b):
+    return 0.5*(cos_diff(a,b) - cos_sum(a,b))
+
+def sin_plus_sin(A, B): 
+    return 2 * sin_d((A + B) / 2) * cos_d((A - B) / 2)
+
+def sin_minus_sin(A, B): 
+    return 2 * cos_d((A + B) / 2) * sin_d((A - B) / 2)
+
+def cos_plus_cos(A, B): 
+    return 2 * cos_d((A + B) / 2) * cos_d((A - B) / 2)
+
+def cos_minus_cos(A, B): 
+    return -2 * sin_d((A + B) / 2) * sin_d((A - B) / 2)
+
+def sine_rule_side(a,A,B):
+    return a*sin_d(B) / sin_d(A)
+
+def cosine_rule_side(b,c,A):
+    return math.sqrt(b**2+c**2-2*b*c*cos_d(A))
+
+def cosine_rule_angle(a,b,c):
+    return arccos_d((b**2+c**2-a**2)/(2*b*c))
+
+def area_traingle_trig(b,c,A):
+    return 0.5*b*c*sin_d(A)
+
+__all__=[name for name in globals() if not name.startswith("_")]

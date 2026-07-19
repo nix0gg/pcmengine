@@ -1,5 +1,5 @@
 from physics.physics_constants import N_A
-# I don't know at this point lmfao
+
 def concentration(amt_solute, vol_solution):
     return (amt_solute / vol_solution)
 def at_mass(mass_one_atom):
@@ -28,7 +28,7 @@ def equivalent_mass_salt(formula_mass,total_charge):
 def equivalent_mass_acid(molecular_mass, basicity):
     return molecular_mass / basicity
 
-# Mole concept
+
 def no_of_moles1(mass,molecular_mass):
     return mass / molecular_mass
 
@@ -50,7 +50,7 @@ def percentage_composition(mass,molecular_mass):
 def simplewholenoratio(molecular_mass,empirical_formula_mass):
     return molecular_mass / empirical_formula_mass
 
-#Stoichiometry
+
 def mass_percentage_solute(mass_solute,mass_solution):
     return (mass_solute / mass_solution) * 100
 
